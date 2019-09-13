@@ -20,6 +20,8 @@ public class LoginPage extends BasePage {
     private WebElement passwordField;
     @FindBy(xpath = "//*[@test-id='login_page_login_button']")
     private WebElement loginBtn;
+    @FindBy(className = "loginError")
+    private WebElement loginError;
 
 
     public LoginPage sendEmail(String email) {
@@ -35,6 +37,10 @@ public class LoginPage extends BasePage {
     public LoginPage clickLoginBtn() {
         loginBtn.click();
         return this;
+    }
+
+    public boolean isLoginErrorDisplayed() {
+        return loginError.isDisplayed();
     }
 
 }

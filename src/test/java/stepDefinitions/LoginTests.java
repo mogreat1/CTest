@@ -7,6 +7,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.testng.Assert;
 import pages.LoginPage;
 
 public class LoginTests extends BaseTest {
@@ -31,7 +32,8 @@ public class LoginTests extends BaseTest {
 
     @Then("^User is logged in$")
     public void user_is_logged_in() throws Throwable {
-        System.out.println("adf");
+        Assert.assertTrue(loginPage.isLoginErrorDisplayed());
+
     }
 
     @After
