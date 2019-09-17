@@ -13,14 +13,10 @@ import pages.LoginPage;
 public class LoginTests extends BaseTest {
     private LoginPage loginPage;
 
-    @Before
-    public void setUp() {
-        super.setUp();
-        loginPage = new LoginPage(driver);
-    }
-
     @Given("^User is on Login page$")
     public void user_is_on_login_page() throws Throwable {
+        setUp();
+        loginPage = new LoginPage(driver, js, wait);
         driver.get("https://study.com/academy/login.html");
     }
 
@@ -33,11 +29,8 @@ public class LoginTests extends BaseTest {
     @Then("^User is logged in$")
     public void user_is_logged_in() throws Throwable {
         Assert.assertTrue(loginPage.isLoginErrorDisplayed());
+        tearDown();
 
     }
 
-    @After
-    public void tearDown() {
-        super.tearDown();
-    }
 }

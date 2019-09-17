@@ -2,15 +2,17 @@ package pages;
 
 import base.BasePage;
 import base.BaseTest;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage(WebDriver driver, JavascriptExecutor js, WebDriverWait wait) {
+        super(driver, js, wait);
         PageFactory.initElements(driver, this);
     }
 
