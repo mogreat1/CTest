@@ -15,8 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class HomePage extends BasePage {
-    public HomePage(WebDriver driver, JavascriptExecutor js, WebDriverWait wait) {
-        super(driver, js ,wait);
+    public HomePage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -30,7 +30,7 @@ public class HomePage extends BasePage {
     private List<WebElement> testPrepLinks;
     @FindBy(xpath = "//*[@test-id='courses']")
     private WebElement coursesDD;
-    @FindBy(linkText = "Popular Tests")
+    @FindBy(xpath = "//*[text()='Popular Tests']")
     private WebElement popularTestsLink;
     @FindBy(partialLinkText = "SAT")
     private WebElement SATLink;
@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage moveToPopularTestsLink() {
-        wait.until(ExpectedConditions.visibilityOf(popularTestsLink));
+        wait.until(ExpectedConditions.elementToBeClickable(popularTestsLink));
         actions.moveToElement(popularTestsLink).perform();
         return this;
     }

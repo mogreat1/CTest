@@ -44,8 +44,8 @@ public class HomeTests extends BaseTest {
     @Given("^User is on Home page$")
     public void user_is_on_Home_page() throws Throwable {
         setUp();
-        homePage = new HomePage(driver, js, wait);
-        satPage = new SATPage(driver, js, wait);
+        homePage = new HomePage(driver);
+        satPage = new SATPage(driver);
         driver.get("https://study.com/");
     }
 

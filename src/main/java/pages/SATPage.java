@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SATPage extends BasePage {
-    public SATPage(WebDriver driver, JavascriptExecutor js, WebDriverWait wait) {
-        super(driver, js, wait);
+    public SATPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 

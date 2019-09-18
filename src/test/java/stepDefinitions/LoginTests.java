@@ -16,21 +16,24 @@ public class LoginTests extends BaseTest {
     @Given("^User is on Login page$")
     public void user_is_on_login_page() throws Throwable {
         setUp();
-        loginPage = new LoginPage(driver, js, wait);
+        loginPage = new LoginPage(driver);
         driver.get("https://study.com/academy/login.html");
     }
 
     @When("^User login with valid (.+) and (.+)$")
     public void user_login_with_valid_and(String username, String password) throws Throwable {
-
         loginPage.sendEmail(username).sendPassword(password).clickLoginBtn();
     }
 
     @Then("^User is logged in$")
     public void user_is_logged_in() throws Throwable {
         Assert.assertTrue(loginPage.isLoginErrorDisplayed());
-        tearDown();
 
+    }
+
+    @After
+    public void tearDown(){
+        driver.quit();
     }
 
 }

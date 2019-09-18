@@ -9,13 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BaseTest {
 
     protected WebDriver driver;
-    protected JavascriptExecutor js;
-    protected WebDriverWait wait;
+
 
     public void setUp(){
         driver = new ChromeDriver();
-        js = (JavascriptExecutor)driver;
-        wait = new WebDriverWait(driver, 5);
+
     }
 
     public void tearDown(){

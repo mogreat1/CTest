@@ -11,10 +11,10 @@ public class BasePage {
     protected JavascriptExecutor js;
     protected WebDriverWait wait;
 
-    public BasePage(WebDriver driver, JavascriptExecutor js, WebDriverWait wait){
+    public BasePage(WebDriver driver){
         this.driver = driver;
-        this.js = js;
-        this.wait = wait;
+        js = (JavascriptExecutor)driver;
+        wait = new WebDriverWait(driver, 5);
     }
 
     protected void scrollIntoView(WebElement element){
