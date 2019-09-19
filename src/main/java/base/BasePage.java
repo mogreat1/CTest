@@ -3,15 +3,16 @@ package base;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    protected WebDriver driver;
+    protected RemoteWebDriver driver;
     protected JavascriptExecutor js;
     protected WebDriverWait wait;
 
-    public BasePage(WebDriver driver){
+    public BasePage(RemoteWebDriver driver){
         this.driver = driver;
         js = (JavascriptExecutor)driver;
         wait = new WebDriverWait(driver, 5);

@@ -5,13 +5,14 @@ import base.BaseTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage(RemoteWebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
