@@ -23,7 +23,7 @@ public class HomeTests extends BaseTest {
     }
 
     @Test
-    private void test() {
+    private void satPageTitleTest() {
         homePage.moveCourserToCoursesDD();
         homePage.moveToPopularTestsLink();
         homePage.clickSATLink();
@@ -31,13 +31,13 @@ public class HomeTests extends BaseTest {
     }
 
     @Test
-    private void test2() {
+    private void amountPreparationLinksTest() {
         homePage.moveCourserToCoursesDD();
         Assert.assertEquals(homePage.testPrepLinksAmount(), 4);
     }
 
     @Test
-    private void test3() {
+    private void amountPlansLinksTest() {
         homePage.scrollIntoViewTermsOfUse();
         Assert.assertEquals(homePage.plansLinksAmount(), 4);
     }

@@ -61,11 +61,11 @@ public class HomePage extends BasePage {
     public HomePage moveCourserToCoursesDD() {
         actions.moveToElement(coursesDD).perform();
         return this;
-    }
+        }
 
-    public int testPrepLinksAmount() {
+public int testPrepLinksAmount() {
         return testPrepLinks.size();
-    }
+        }
 
 
-}
+        }

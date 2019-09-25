@@ -8,10 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,7 +21,7 @@ public class BaseTest {
     protected RemoteWebDriver driver;
 
 
-    @BeforeTest
+    @BeforeSuite
     public void startDockerScale() throws IOException, InterruptedException
     {
         File fi =new File("output.txt");
@@ -36,7 +33,7 @@ public class BaseTest {
         s.startFile();
     }
 
-    @AfterTest
+    @AfterSuite
     public void stopDockerDeleteFile() throws IOException, InterruptedException
     {
         Stop d=new Stop();
@@ -48,7 +45,7 @@ public class BaseTest {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities cap=DesiredCapabilities.chrome();
         URL url=new URL("http://localhost:4444/wd/hub");
-        driver=new ThreadLocal<RemoteWebDriver(url,cap)>();
+        driver=new RemoteWebDriver(url, cap);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
     }
